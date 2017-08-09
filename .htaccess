@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?id=$1 [L,QSA]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\?id=([^\&\ ]+)
+RewriteRule ^/?index\.php$ /indeks/%1? [L,R=301]
